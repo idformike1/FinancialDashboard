@@ -10,7 +10,7 @@ export default function Home() {
     <div className="space-y-16">
       <section className="space-y-4 text-center md:text-left animate-in fade-in slide-in-from-top-4 duration-500">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
-          Financial Risk Dashboard
+          Lagani Dashboard
         </h1>
         <p className="max-w-[700px] text-muted-foreground text-lg">
           Analyze and calibrate your investment strategy. Compare risk profiles across different asset classes and project potential returns.

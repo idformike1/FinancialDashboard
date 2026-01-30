@@ -37,21 +37,31 @@ export function ComparisonSection() {
                 <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
                     <CardHeader>
                         <CardTitle>Risk vs. Return Profile</CardTitle>
-                        <CardDescription>Visual comparison of risk exposure and potential returns</CardDescription>
+                        <CardDescription className="text-secondary-foreground/80">Visual comparison of risk exposure and potential returns</CardDescription>
                     </CardHeader>
-                    <CardContent className="h-[400px]">
+                    <CardContent className="h-[300px] sm:h-[400px]">
                         <ResponsiveContainer width="100%" height="100%">
-                            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
+                            <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
                                 <PolarGrid stroke="hsl(var(--muted-foreground))" strokeOpacity={0.2} />
-                                <PolarAngleAxis dataKey="name" tick={{ fill: "hsl(var(--foreground))", fontSize: 12 }} />
+                                <PolarAngleAxis
+                                    dataKey="name"
+                                    tick={{ fill: "hsl(var(--foreground))", fontSize: 10 }}
+                                />
                                 <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
 
                                 <Radar name="Risk Exposure" dataKey="Risk" stroke="#ef4444" fill="#ef4444" fillOpacity={0.4} />
                                 <Radar name="Potential Return" dataKey="Return" stroke="#10b981" fill="#10b981" fillOpacity={0.4} />
 
-                                <Legend />
+                                <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
                                 <Tooltip
-                                    contentStyle={{ backgroundColor: "hsl(var(--card))", borderColor: "hsl(var(--border))", color: "hsl(var(--foreground))" }}
+                                    contentStyle={{
+                                        backgroundColor: "hsl(var(--popover))",
+                                        borderColor: "hsl(var(--border))",
+                                        color: "hsl(var(--popover-foreground))",
+                                        borderRadius: "0.5rem",
+                                        boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)"
+                                    }}
+                                    itemStyle={{ fontSize: '12px' }}
                                 />
                             </RadarChart>
                         </ResponsiveContainer>
