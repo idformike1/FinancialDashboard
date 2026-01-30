@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { LayoutDashboard, Wallet, ShieldCheck, TrendingUp, Bitcoin } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Logo } from "@/components/logo";
 
 const NAV_ITEMS = [
     { name: "Overview", href: "/", icon: LayoutDashboard },
@@ -29,10 +30,10 @@ export function Navbar() {
                     {/* Logo Link: Absolute Center on Mobile, Static on Desktop */}
                     <Link
                         href="/"
-                        className="flex items-center gap-2 font-bold tracking-tight absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
+                        className="flex items-center gap-3 font-bold tracking-tight absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:transform-none"
                     >
-                        <img src="/logo.png" alt="Lagani Logo" className="h-10 w-auto md:h-12 object-contain" />
-                        <span className="text-xl md:text-2xl hidden sm:inline-block">Lagani</span>
+                        <Logo className="h-10 w-10 md:h-12 md:w-12" />
+                        <span className="text-xl md:text-2xl text-foreground">Lagani</span>
                     </Link>
 
                     {/* Desktop Nav Items */}
